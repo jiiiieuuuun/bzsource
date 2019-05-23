@@ -1,0 +1,9 @@
+{{ if .Site.Params.ShowReadTime }}
+  A {{ .ReadingTime }} minute read,
+{{ end }}
+
+<!--{{ partial "categories.html" .}}-->
+<div class="tag_wrap">
+{{ partial "categories.html" .}}
+</div>
+

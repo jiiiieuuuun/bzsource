@@ -1,0 +1,54 @@
+{{ partial "header.html" .}}
+
+    <!-- Page Header -->
+    <header class="intro-header" ><!--style="background-image: url('{{ .Site.BaseURL }}/img/home.png')"-->
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+           <div class="site-heading">
+             <div class="site-title">
+                <img src="{{ .Site.BaseURL }}/img/dkbmc-logo-1.png" / >
+                <h1>{{ .Site.Title }}</h1>
+             </div>
+             
+             <!--<hr class="small">-->
+             {{ with .Site.Params.Description }}<span class="subheading">{{ . }}</span>{{ end }}
+           </div>
+         </div>
+       </div>
+     </div> 
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        {{ partial "allCategoryList.html" .}}
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+          {{ $posts := or .Site.Params.PostSummariesFrontPage 5 }}
+          {{ range first $posts (where .Data.Pages "Type" "post") }}
+              {{ .Render "summary"}}
+          {{ end }}
+          <!-- Pager --> 
+          <ul class="pager">
+            <li class="next">
+              <a href="{{ .Site.BaseURL }}/post/">Older Posts &rarr;</a>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div> 
+
+    <!-- <style>
+        .navbar-brand {
+          transition-duration: 0.3s;
+        }
+        .navbar-custom.is-fixed .home-link {
+          opacity: 1 !important;
+        }
+    </style>
+    <script>
+      document.getElementsByClassName("navbar-brand")[0].style.opacity = "0";
+    </script> -->
+
+{{ partial "footer.html" .}}
