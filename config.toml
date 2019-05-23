@@ -1,13 +1,13 @@
 baseURL = "https://jiiiieuuuun.github.io/bzblog/"
 languageCode = "en-us"
-title = "Technology"
+title = "Business"
 theme = "startbootstrap-clean-blog-master"
 copyright = "©DKBMC. All rights reserved. Powered by GitHub Pages."
 paginate = 3
 
 [params]
   DateForm = "Mon, Jan 2, 2006"
-  Description = "DK BMC Technology Blog"
+  Description = "DK BMC Business case Blog"
   Author = "DK BMC"
   # email = "benoit.benedetti@gmail.com"
   Ganalytics = "XX-00000000-0"
